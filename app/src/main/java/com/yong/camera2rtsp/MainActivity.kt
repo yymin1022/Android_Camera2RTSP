@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     private var inputServerIp: EditText? = null
     private var inputServerPort: EditText? = null
 
+    private var cameraEncoder: CameraEncoder? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -36,8 +38,20 @@ class MainActivity : AppCompatActivity() {
 
     private val btnListener = View.OnClickListener { view ->
         when(view.id) {
-            R.id.main_btn_start -> {}
-            R.id.main_btn_stop -> {}
+            R.id.main_btn_start -> {
+                if(cameraEncoder == null) {
+                    val serverIP =  inputServerIp!!.text.toString()
+                    val serverPort = inputServerPort!!.text.toString().toInt()
+                    cameraEncoder = CameraEncoder(serverIP, serverPort)
+                    cameraEncoder?.startCameraCapture(applicationContext, 1280, 720, 2000000, 30)
+                }
+            }
+            R.id.main_btn_stop -> {
+                if(cameraEncoder != null) {
+                    cameraEncoder?.stopCameraCapture()
+                    cameraEncoder = null
+                }
+            }
         }
     }
 }

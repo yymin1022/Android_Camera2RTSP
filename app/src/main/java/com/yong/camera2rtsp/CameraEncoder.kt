@@ -128,7 +128,7 @@ class CameraEncoder(serverIp: String, private val serverPort: Int) {
 
     private fun handleEncodedData() {
         val bufferInfo = MediaCodec.BufferInfo()
-        
+
         while(true) {
             val outputBufferId = mediaCodec?.dequeueOutputBuffer(bufferInfo, 10000) ?: -1
             if(outputBufferId >= 0) {
