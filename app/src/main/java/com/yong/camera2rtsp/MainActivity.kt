@@ -12,7 +12,8 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
     private var btnStart: Button? = null
     private var btnStop: Button? = null
-    private var inputServer: EditText? = null
+    private var inputServerIp: EditText? = null
+    private var inputServerPort: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         btnStart = findViewById(R.id.main_btn_start)
         btnStop = findViewById(R.id.main_btn_stop)
-        inputServer = findViewById(R.id.main_input_server)
+        inputServerIp = findViewById(R.id.main_input_server_ip)
+        inputServerPort = findViewById(R.id.main_input_server_port)
 
         btnStart!!.setOnClickListener(btnListener)
         btnStop!!.setOnClickListener(btnListener)

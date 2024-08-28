@@ -10,11 +10,20 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/main_input_server"
-        app:layout_constraintBottom_toTopOf="@id/main_btn_start"
+        android:id="@+id/main_input_server_ip"
+        app:layout_constraintBottom_toTopOf="@id/main_input_server_port"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_input_server_port"
+        app:layout_constraintBottom_toTopOf="@id/main_btn_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_input_server_ip" />
 
     <Button
         android:layout_width="wrap_content"
@@ -24,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/main_btn_stop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_input_server" />
+        app:layout_constraintTop_toBottomOf="@id/main_input_server_port" />
 
     <Button
         android:layout_width="wrap_content"
@@ -34,6 +43,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/main_btn_start"
-        app:layout_constraintTop_toBottomOf="@id/main_input_server" />
+        app:layout_constraintTop_toBottomOf="@id/main_input_server_port" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
